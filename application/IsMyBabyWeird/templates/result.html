@@ -1,0 +1,30 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} - IsMyBabyWeird</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav>
+  <h1>IsMyBabyWeird</h1>
+</nav>
+<section class="content">
+  <header>
+    <h1>What weird thing is your baby doing?</h1>
+  </header>
+    <form action="/" method="POST" >
+      <input type="text" name="u_query">
+      <input type = "submit" value = "Query">
+    </form>
+    <form action="/results" method="POST">
+          <label>Select :</label>
+        <select name="post_option">
+    <option value="{{ option_list[0] }}" selected>{{ option_list[0] }}</option>
+            {% for option in option_list[1:] %}
+            <option value="{{ option }}" >{{ option }}</option>
+            {% endfor %}
+        </select>
+
+        <input class="button1" type="submit" value="Select">
+
+    </form>
+  <p class="description">
+   {{ relevant|safe }}</p>
+
+</section>

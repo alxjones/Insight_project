@@ -1,0 +1,17 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} - IsMyBabyWeird</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav>
+  <h1>IsMyBabyWeird</h1>
+</nav>
+<section class="content">
+  <header>
+    <h1>What weird thing is your baby doing?</h1>
+  </header>
+    <form action="/" method="POST" >
+      <input type="text" name="u_query"><br>
+      <input type = "submit" value = "Query">
+    </form>
+  <p class="description">
+  {% if relevant %} {{ relevant|safe }} {% endif %}</p>
+</section>
